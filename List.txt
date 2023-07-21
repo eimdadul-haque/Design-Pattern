@@ -1,0 +1,16 @@
+Behavioral :
+ 1. Observer
+ 2. Iterator
+ 3. Strategy
+
+Creational : 
+ 1. Factory
+ 2. Builder
+ 3. Singleton
+
+Structural
+ 1. Adapter
+ 2. Facade
+
+
+
