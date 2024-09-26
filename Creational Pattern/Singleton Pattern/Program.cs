@@ -53,7 +53,7 @@ public class SingletonThree
 
     private SingletonThree() { }
 
-    public static SingletonThree singletonTwo
+    public static SingletonThree singletonThree
     {
         get
         {
@@ -69,6 +69,23 @@ public class SingletonThree
             }
 
             return _singletonThree;
+        }
+    }
+}
+
+//Lazy Initialization
+
+public class SingletonFour
+{
+    public static readonly Lazy<SingletonFour> _singletonFour = new Lazy<SingletonFour>(() => new SingletonFour());
+
+    private SingletonFour() { }
+
+    public static SingletonFour singletonFour
+    {
+        get
+        {
+            return _singletonFour.Value;
         }
     }
 }
