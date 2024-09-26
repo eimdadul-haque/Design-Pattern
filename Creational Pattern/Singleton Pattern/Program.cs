@@ -18,3 +18,28 @@ public class SingletonOne
         }
     }
 }
+
+//Thread-Safe (Using lock)
+public class SingletonTwo
+{
+    public static SingletonTwo _singletonTwo;
+    private static readonly Object _lock = new Object();
+
+    private SingletonTwo() { }
+
+    public static SingletonTwo singletonTwo
+    {
+        get
+        {
+            lock (_lock)
+            {
+                if (_singletonTwo == null)
+                {
+                    _singletonTwo = new SingletonTwo();
+                }
+            }
+
+            return _singletonTwo;
+        }
+    }
+}
