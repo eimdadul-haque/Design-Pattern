@@ -89,3 +89,20 @@ public class SingletonFour
         }
     }
 }
+
+//Eager Initialization
+
+public class SingletonFive
+{
+    public static readonly SingletonFive _singletonFive = new SingletonFive();
+
+    private SingletonFive() { }
+
+    public static SingletonFive singletonFive
+    {
+        get
+        {
+            return _singletonFive;
+        }
+    }
+}
