@@ -43,3 +43,32 @@ public class SingletonTwo
         }
     }
 }
+
+//Thread-Safe Singleton with Double-Check Locking
+
+public class SingletonThree
+{
+    public static SingletonThree _singletonThree;
+    private static readonly Object _lock = new Object();
+
+    private SingletonThree() { }
+
+    public static SingletonThree singletonTwo
+    {
+        get
+        {
+            if (_singletonThree == null)
+            {
+                lock (_lock)
+                {
+                    if (_singletonThree == null)
+                    {
+                        _singletonThree = new SingletonThree();
+                    }
+                }
+            }
+
+            return _singletonThree;
+        }
+    }
+}
